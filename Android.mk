@@ -56,6 +56,9 @@ ifdef SUPERUSER_EMBEDDED
 # init.rc or similar
 
 SUPERUSER_RC := $(TARGET_ROOT_OUT)/init.superuser.rc
+
+$(shell cp $(LOCAL_PATH)/init.superuser.rc $(SUPERUSER_RC))
+
 $(SUPERUSER_RC): $(LOCAL_PATH)/init.superuser.rc | $(ACP)
 	$(copy-file-to-new-target)
 
